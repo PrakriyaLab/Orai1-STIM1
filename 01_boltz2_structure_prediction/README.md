@@ -8,15 +8,19 @@ in two passes with [LMI4Boltz](https://github.com/tlitfin/lmi4boltz).
 ```
 configs/
   orai1_singlechain.yaml                       Boltz-2 input: single Orai1 chain, sequence only
-  orai1_hexamer_cad_complex_restrained.yaml     Boltz-2 input: 6x Orai1 + 12x CAD, template + contact restraints
+  orai1_hexamer_cad_complex_restrained.yaml     Boltz-2 input: 6x Orai1 + 12x CAD, template + pocket restraints
 structures/
   orai1_singlechain_model.cif                   Output of the single-chain run
   orai1_singlechain_confidence.json
   orai1_singlechain_template_truncated.cif       Single-chain model, truncated (TM4 extension /
                                                  TM1 cytosolic segment / TM3-TM4 loop removed),
                                                  used as the structural template for the complex run
-  orai1_hexamer_cad_complex_model.cif            Output of the restrained complex run
-  orai1_hexamer_cad_complex_confidence.json
+  boltz2_model_0.cif            Output of the restrained complex run
+  boltz2_model_1.cif
+  boltz2_model_2.cif
+  confidence_boltz2-A.trunc.v2_model_0.json
+  confidence_boltz2-A.trunc.v2_model_1.json
+  confidence_boltz2-A.trunc.v2_model_2.json
 raw_boltz2_run_output/    (present locally, not tracked in git — see repo-root README)
   boltz_results_orai1.singlechain/
   boltz_results_boltz2-A.trunc/
@@ -33,10 +37,9 @@ raw_boltz2_run_output/    (present locally, not tracked in git — see repo-root
    - defines 6 copies of the Orai1 sequence (chains A–F) and 12 copies of
      the STIM1 CAD sequence (chains G–R, i.e. 2 CAD per Orai1 subunit),
    - supplies the truncated single-chain structure above as a forced
-     template for chain A,
+     template for Orai1,
    - applies pocket and pairwise-distance restraints encoding known
-     Orai1–STIM1 contacts (e.g. Orai1 residue 258 (Tyr) – STIM1 CAD residue
-     398 (His); numbering in the config is local to each chain's sequence
+     Orai1–STIM1 pocket; numbering in the config is local to each chain's sequence
      and is annotated in comments with the canonical residue numbers).
 
 Confidence scores for both runs are in the corresponding
