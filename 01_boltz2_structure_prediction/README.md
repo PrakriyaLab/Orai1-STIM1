@@ -1,4 +1,4 @@
-# Stage 1 — Boltz-2 structure prediction
+# 01 — Boltz-2 structure prediction
 
 Predicts the Orai1 hexamer bound to the STIM1 CRAC-activation domain (CAD)
 in two passes with [LMI4Boltz](https://github.com/tlitfin/lmi4boltz).

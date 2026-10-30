@@ -1,4 +1,4 @@
-# Stage 3 — Molecular dynamics: system building, simulation, analysis
+# 03 — Molecular dynamics: system building, simulation, analysis
 
 The minimized complex from Stage 2 (and related structural variants — see
 below) is embedded in a POPC bilayer with [CHARMM-GUI](https://charmm-gui.org)
