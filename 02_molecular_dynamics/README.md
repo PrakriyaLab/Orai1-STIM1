@@ -9,11 +9,10 @@ distances, and mutation ΔΔG.
 ## Contents
 
 ```
-system/            One folder per CHARMM-GUI-built system (WT_boltz2, WT_refined_loop,
-                    boltz2.pentameric), including the full CHARMM-GUI
+system/            One folder per CHARMM-GUI-built system including the full CHARMM-GUI
                     structure/topology files (step5_input.psf/.pdb/.crd, ~200 MB each).
 restraints/        Per-condition restraint definitions (dihe.txt, lipid_pos.txt,
-                    prot_pos.txt) for 5 simulation conditions (see below).
+                    prot_pos.txt) for 5 simulation conditions.
 inputs/            CHARMM-GUI OpenMM input decks: step6.1-6.6 (equilibration), step7 (production).
 scripts/           postprocessing_MD.py, _RMSD.py, _RMSF.py, _Distance.py/distance.py,
                     featurization.py (project analysis code).
