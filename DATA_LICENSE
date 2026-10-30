@@ -1,10 +1,8 @@
 Data License: CC BY 4.0
 
 The data in this repository — including modeled structures, coordinates, and
-other generated datasets (excluding the CHARMM-GUI-derived force field files
-and scripts noted in the main README, which remain under their own terms) —
-is licensed under the Creative Commons Attribution 4.0 International License
-(CC BY 4.0).
+other generated datasets — is licensed under the Creative Commons Attribution 4.0 
+International License (CC BY 4.0).
 
 You are free to:
   - Share — copy and redistribute the material in any medium or format
@@ -17,5 +15,4 @@ Under the following terms:
 
 Full license text: https://creativecommons.org/licenses/by/4.0/legalcode
 
-If you use this data, please cite: [add citation once the manuscript is
-published/preprinted]
+If you use this data, please cite: ...
