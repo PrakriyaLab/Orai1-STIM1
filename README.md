@@ -24,50 +24,6 @@ and side view (right). A vector version is available at
 └── docs/figures/                     Figures for this README
 ```
 
-## Pipeline overview
-
-### Stage 1 — Boltz-2 structure prediction (`01_boltz2_structure_prediction/`)
-
-1. **Single-chain model.** A single Orai1 subunit is predicted from sequence
-   alone with [Boltz-2](https://github.com/jwohlwend/boltz)
-   (`configs/orai1_singlechain.yaml` → `structures/orai1_singlechain_model.cif`).
-2. **Truncated template.** The single-chain model is truncated (TM4
-   extension removed, TM1 cytosolic segment removed, TM3–TM4 loop removed)
-   to give a minimal, well-supported template
-   (`structures/orai1_singlechain_template_truncated.cif`).
-3. **Restrained hexamer + CAD complex.** The truncated template is used to
-   guide a Boltz-2 prediction of the full complex: six copies of Orai1
-   (chains A–F) and twelve copies of the STIM1 CRAC-activation domain (CAD,
-   chains G–R, two CAD per Orai1 subunit), with pocket and pairwise-contact
-   restraints encoding known Orai1–STIM1 interface residues (e.g. Orai1
-   Tyr258–STIM1 His398)
-   (`configs/boltz2.yaml` →
-   `structures/boltz2_model_*.cif`).
-
-### Stage 2 — Molecular dynamics (`03_molecular_dynamics/`)
-
-The refined complex (and related structures — see below) is built into a
-membrane system with [CHARMM-GUI](https://charmm-gui.org) (POPC bilayer,
-CaCl₂-containing solvent, CHARMM36 force field) and simulated with OpenMM.
-
-- `system/` — one subfolder per CHARMM-GUI-built system (`WT_boltz2`,
-  `WT_refined_loop`, `boltz2.pentameric`), including the full CHARMM-GUI
-  structure/topology files (`step5_input.psf/.pdb/.crd`).
-- `restraints/` — per-condition restraint definitions (protein position,
-  lipid position, dihedral) for different systems.
-- `inputs/` — CHARMM-GUI OpenMM input decks for six equilibration stages
-  (`step6.1`–`step6.6`) and production (`step7`).
-- `scripts/` — the CHARMM-GUI-generated OpenMM driver (`openmm_run.py` and
-  `omm_*.py` helper modules) plus post-processing and analysis code
-  (trajectory alignment, RMSD, RMSF, inter-residue distances, PyEMMA
-  featurization).
-- `submission/` — job wrappers around the analysis scripts
-  (`submit_1`…`submit_5`) and FoldX repair/mutation scans
-  (`submit_6`, `submit_7`) for ΔΔG estimation.
-- `analysis_notebooks/` — Jupyter notebooks for RMSD/RMSF structural
-  analysis, ΔΔG analysis, representative-snapshot selection, and
-  gate-residue distance tracking (e.g. Orai1 Y258 / STIM1 F394–H398).
-
 ## Software
 
 - [Boltz-2](https://github.com/jwohlwend/boltz) — structure prediction

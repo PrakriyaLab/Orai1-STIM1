@@ -28,8 +28,4 @@ raw_boltz2_run_output/    (present locally, not tracked in git — see repo-root
 
 ## Method
 
-Confidence scores for both runs are in the corresponding
-`*_confidence.json` file (`confidence_score`, `ptm`/`iptm`, `plddt`, etc.).
-
-(Exact CLI flags depend on the installed [LMI4Boltz](https://github.com/tlitfin/lmi4boltz) — see its own
-documentation.)
+Exact CLI flags depend on the installed [LMI4Boltz](https://github.com/tlitfin/lmi4boltz) — see its own documentation.
