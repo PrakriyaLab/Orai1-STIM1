@@ -36,10 +36,7 @@ and side view (right). A vector version is available at
 
 ## License
 
-Code in this repository is released under the [MIT License](LICENSE). The
-force field files, and MD production under `03_molecular_dynamics/scripts` are third-party
-distributed by CHARMM-GUI/the MacKerell lab under their own academic-use terms and are not 
-covered by this repository's license.
+Code in this repository is released under the MIT License.
 
 ## Contact
 

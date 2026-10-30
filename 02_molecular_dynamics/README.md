@@ -14,10 +14,8 @@ system/            One folder per CHARMM-GUI-built system (WT_boltz2, WT_refined
                     structure/topology files (step5_input.psf/.pdb/.crd, ~200 MB each).
 restraints/        Per-condition restraint definitions (dihe.txt, lipid_pos.txt,
                     prot_pos.txt) for 5 simulation conditions (see below).
-toppar/, toppar.str   CHARMM36 / CGenFF force field files (third-party, see repo-root LICENSE).
 inputs/            CHARMM-GUI OpenMM input decks: step6.1-6.6 (equilibration), step7 (production).
-scripts/           openmm_run.py + omm_*.py (CHARMM-GUI OpenMM driver, unmodified);
-                    postprocessing_MD.py, _RMSD.py, _RMSF.py, _Distance.py/distance.py,
+scripts/           postprocessing_MD.py, _RMSD.py, _RMSF.py, _Distance.py/distance.py,
                     featurization.py (project analysis code).
 submission/        Job wrappers: submit_1 (postprocessing) .. submit_5 (featurization),
                     submit_6/7 (FoldX repair + mutation scan, for DDG estimation).
