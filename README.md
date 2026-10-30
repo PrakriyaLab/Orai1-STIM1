@@ -36,8 +36,6 @@ and side view (right). A vector version is available at
 
 ## License
 
-## License
-
 - **Code** in this repository is released under the [MIT License](LICENSE).
 - **Data** (modeled structures, coordinates, and other generated datasets) is released under
   [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) — you are free to use and redistribute
