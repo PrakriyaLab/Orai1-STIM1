@@ -1,10 +1,9 @@
-# 03 — Molecular dynamics: system building, simulation, analysis
+# 02 — Molecular dynamics: system building, simulation, analysis
 
-The minimized complex from Stage 2 (and related structural variants — see
-below) is embedded in a POPC bilayer with [CHARMM-GUI](https://charmm-gui.org)
-(CHARMM36 force field, CaCl₂-containing solvent), equilibrated and run in
-production with OpenMM, and analyzed for structural stability, gating-site
-distances, and mutation ΔΔG.
+The minimized complex from 01 is embedded in a POPC bilayer with 
+[CHARMM-GUI](https://charmm-gui.org) (CHARMM36 force field, CaCl₂-containing solvent), 
+equilibrated and run in production with OpenMM, and analyzed for structural stability, 
+binding interface distances, and mutation ΔΔG.
 
 ## Contents
 
