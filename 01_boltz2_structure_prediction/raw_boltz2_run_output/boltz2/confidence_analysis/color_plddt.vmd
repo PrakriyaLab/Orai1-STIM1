@@ -1,0 +1,44 @@
+# source this from the VMD TkConsole, or:  vmd -e color_plddt.vmd
+mol new boltz2-A.trunc.v2_model_0_plddt100.pdb type pdb waitfor all
+mol delrep 0 top
+display projection Orthographic
+color Display Background white
+axes location Off
+
+# very_high  (90-100)  #0053D6
+color change rgb 20 0.000 0.325 0.839
+mol representation NewCartoon 0.300 20.0 4.100 0
+mol color ColorID 20
+mol selection {beta >= 90.0}
+mol material AOChalky
+mol addrep top
+
+# confident  (70-90)  #65CBF3
+color change rgb 21 0.396 0.796 0.953
+mol representation NewCartoon 0.300 20.0 4.100 0
+mol color ColorID 21
+mol selection {beta >= 70.0 and beta < 90.0}
+mol material AOChalky
+mol addrep top
+
+# low  (50-70)  #FFDB13
+color change rgb 22 1.000 0.859 0.075
+mol representation NewCartoon 0.300 20.0 4.100 0
+mol color ColorID 22
+mol selection {beta >= 50.0 and beta < 70.0}
+mol material AOChalky
+mol addrep top
+
+# very_low  (0-50)  #FF7D45
+color change rgb 23 1.000 0.490 0.271
+mol representation NewCartoon 0.300 20.0 4.100 0
+mol color ColorID 23
+mol selection {beta >= 0.0 and beta < 50.0}
+mol material AOChalky
+mol addrep top
+
+# continuous alternative: one rep, Beta colouring, fixed 0-100 range
+# mol modcolor 0 top Beta
+# mol scaleminmax top 0 100
+
+display resetview

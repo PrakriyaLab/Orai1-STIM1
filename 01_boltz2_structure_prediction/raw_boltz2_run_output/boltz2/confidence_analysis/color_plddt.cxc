@@ -1,0 +1,7 @@
+open boltz2-A.trunc.v2_model_0_plddt100.cif
+hide atoms
+show cartoon
+color bfactor palette alphafold
+key blue:very-high cyan:confident yellow:low orange:very-low
+set bgColor white
+view

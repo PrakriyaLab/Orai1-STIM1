@@ -1,0 +1,28 @@
+version: 1
+sequences:
+  - protein:
+      id: [A, B, C, D, E, F]
+      sequence: TYPDWIGQSYSEVMSLNEHSMQALSWRKLYLSRAKLKASSRTSALLSGFAMVAMVEVQLDADHDYPPGLLIAFSACTTVLVAVHLFALMISTCILPNIEAVSNVHNLNSVKESPHERMHRHIELAWAFSTVIGTLLFLAEVVLLCWVKFLPLKKQPGQPRPTSKPPASGAAANVSTSGITPGQAAAIASTTIMVPFGLIFIVFAVHFYRSLVSHKTDRQFQELNELAEFARLQDQLDHRGDHPLTPGSHYA
+  - protein:
+      id: [G, H, I, J, K, L, M, N, O, P, Q, R]
+      sequence: YAPEALQKWLQLTHEVEVQYYNIKKQNAEKQLLVAKEGAEKIKKKRNTLFGTFHVAHSSSLDDVDHKILTAKQALSEVTAALRERLHRWQQIEILCGFQIVNN
+
+templates:
+  - cif: orai1_singlechain_template_truncated.cif 
+    force: True
+    chain_id: [A]  # query chain to receive the template
+    template_id: [A] 
+
+constraints:
+
+  - pocket:
+      binder: G
+      contacts: [[A, 21], [A, 24], [A, 10], [A, 17], [A, 124], [A, 223], [A, 208], [A, 212], [A, 233], [A, 231]] #M71, L74, Y60 and N67, 174, 273, 258, 262, 283, 281
+      max_distance: 4.0
+      force: True
+
+  - pocket:
+      binder: A
+      contacts: [[G, 68], [G, 32], [G, 57], [G, 79], [G, 76], [G, 52], [G, 29]] #I409, L373, H398, T420, S417, T393, E370
+      max_distance: 4.0
+      force: True

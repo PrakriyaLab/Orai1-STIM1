@@ -1,0 +1,26 @@
+# Stage 3 — Molecular dynamics: system building, simulation, analysis
+
+The minimized complex from Stage 2 (and related structural variants — see
+below) is embedded in a POPC bilayer with [CHARMM-GUI](https://charmm-gui.org)
+(CHARMM36 force field, CaCl₂-containing solvent), equilibrated and run in
+production with OpenMM, and analyzed for structural stability, gating-site
+distances, and mutation ΔΔG.
+
+## Contents
+
+```
+system/            One folder per CHARMM-GUI-built system (WT_boltz2, WT_refined_loop,
+                    boltz2.pentameric), including the full CHARMM-GUI
+                    structure/topology files (step5_input.psf/.pdb/.crd, ~200 MB each).
+restraints/        Per-condition restraint definitions (dihe.txt, lipid_pos.txt,
+                    prot_pos.txt) for 5 simulation conditions (see below).
+toppar/, toppar.str   CHARMM36 / CGenFF force field files (third-party, see repo-root LICENSE).
+inputs/            CHARMM-GUI OpenMM input decks: step6.1-6.6 (equilibration), step7 (production).
+scripts/           openmm_run.py + omm_*.py (CHARMM-GUI OpenMM driver, unmodified);
+                    postprocessing_MD.py, _RMSD.py, _RMSF.py, _Distance.py/distance.py,
+                    featurization.py (project analysis code).
+submission/        Job wrappers: submit_1 (postprocessing) .. submit_5 (featurization),
+                    submit_6/7 (FoldX repair + mutation scan, for DDG estimation).
+analysis_notebooks/   DDG_analysis.ipynb, Structural_analysis.RMSF-RMSD.refined.ipynb,
+                    Snapshots_selections.ipynb, Y258-F394-H398.ipynb.
+```
